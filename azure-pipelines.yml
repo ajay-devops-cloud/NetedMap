@@ -2,7 +2,7 @@ trigger: none
 pool: apna-agent-pool
 
 variables:
-  config-path: "$(System.DefaultWorkingDirectory)/Nested map/Parent Module"
+  configpath: "$(System.DefaultWorkingDirectory)/Nested map/Parent Module"
 
 steps:
 
@@ -10,7 +10,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: 'config-path'
+    workingDirectory: 'configpath'
     backendServiceArm: 'next-level-service-connection'
     backendAzureRmStorageAccountName: 'itsolution'
     backendAzureRmContainerName: 'nextlevelcontainer'
@@ -21,7 +21,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    workingDirectory: 'config-path'
+    workingDirectory: 'configpath'
     environmentServiceNameAzureRM: 'next-level-service-connection'
 
 
