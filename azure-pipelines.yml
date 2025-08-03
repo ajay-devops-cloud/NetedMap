@@ -1,13 +1,16 @@
 trigger: none
 pool: apna-agent-pool
 
+variables:
+  config-path: "$(System.DefaultWorkingDirectory)/Nested map/Parent Module"
+
 steps:
 
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '"$(System.DefaultWorkingDirectory)/Nested map/Parent Module"'
+    workingDirectory: 'config-path'
     backendServiceArm: 'next-level-service-connection'
     backendAzureRmStorageAccountName: 'itsolution'
     backendAzureRmContainerName: 'nextlevelcontainer'
@@ -18,7 +21,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    workingDirectory: '"$(System.DefaultWorkingDirectory)/Nested map/Parent Module"'
+    workingDirectory: 'config-path'
     environmentServiceNameAzureRM: 'next-level-service-connection'
 
 
