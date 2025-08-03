@@ -10,7 +10,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: 'configpath'
+    workingDirectory: '$(configpath)'
     backendServiceArm: 'next-level-service-connection'
     backendAzureRmStorageAccountName: 'itsolution'
     backendAzureRmContainerName: 'nextlevelcontainer'
@@ -21,7 +21,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    workingDirectory: 'configpath'
+    workingDirectory: '$(configpath)'
     environmentServiceNameAzureRM: 'next-level-service-connection'
 
 
