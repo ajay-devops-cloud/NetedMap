@@ -15,6 +15,7 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(configpath)'
+            backendServiceArm: 'next-level-service-connection' 
             backendAzureRmStorageAccountName: 'itsolution'
             backendAzureRmContainerName: 'nextlevelcontainer'
             backendAzureRmKey: 'mytf.tfstate'
