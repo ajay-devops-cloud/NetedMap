@@ -25,7 +25,12 @@ stages:
             command: 'plan'
             workingDirectory: '$(configpath)'
             environmentServiceNameAzureRM: 'next-level-service-connection'
-
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'apply'
+            workingDirectory: '"$(System.DefaultWorkingDirectory)/Nested map/Parent Module"'
+            environmentServiceNameAzureRM: 'next-level-service-connection'
 
 
 
