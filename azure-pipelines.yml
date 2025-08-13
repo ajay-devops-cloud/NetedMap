@@ -21,7 +21,9 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/Nested map/Parent Module'
     environmentServiceNameAzureRM: 'cloud-next'
+
 
 
     
